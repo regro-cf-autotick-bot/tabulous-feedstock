@@ -18,6 +18,7 @@ build:
 
 requirements:
   host:
+    - hatchling
     - pip
     - python >=3.8
   run:
@@ -25,6 +26,7 @@ requirements:
     - collections-undo >=0.0.7
     - magicgui >=0.5.1
     - matplotlib-base >=3.1
+    - numpy                       # Imported but not listed as requirement
     - pandas >=1.5.2
     - psygnal >=0.9.0
     - python >=3.8
@@ -32,11 +34,14 @@ requirements:
     - qtconsole
     - qtpy >=1.10.0
     - requests
-    - scikit-learn >=1
-    - scipy >=1.7
-    - seaborn >=0.11
+    - superqt                     # Imported but not listed as requirement
     - tabulate
     - toml
+    - typing-extensions           # Imported but not listed as requirement
+    # Extras
+    - scikit-learn >=1.1
+    - scipy >=1.7
+    - seaborn >=0.11
 
 test:
   imports:
