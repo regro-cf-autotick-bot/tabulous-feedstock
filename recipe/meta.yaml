@@ -1,5 +1,5 @@
 {% set name = "tabulous" %}
-{% set version = "0.5.5" %}
+{% set version = "0.5.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tabulous-{{ version }}.tar.gz
-  sha256: 4e915b3bbca487dc2e8934ec645d3b8a7a45c4a436fa9835aff1be88d540be77
+  sha256: 0ea3df000b4cf44599b3973ef850142298a156a546e7fb0acae77ea94d15cf4c
 
 build:
   entry_points:
