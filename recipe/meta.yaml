@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tabulous-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tabulous-{{ version }}.tar.gz
   sha256: 4e915b3bbca487dc2e8934ec645d3b8a7a45c4a436fa9835aff1be88d540be77
 
 build:
@@ -14,13 +14,13 @@ build:
     - tabulous=tabulous.__main__:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - hatchling
     - pip
-    - python >=3.8
+    - python {{ python_min }}
   run:
     - appdirs >=1.4.4
     - collections-undo >=0.0.7
@@ -29,7 +29,7 @@ requirements:
     - numpy                       # Imported but not listed as requirement
     - pandas >=1.5.2
     - psygnal >=0.9.0
-    - python >=3.8
+    - python >={{ python_min }}
     - qt-command-palette >=0.0.6
     - qtconsole
     - qtpy >=1.10.0
@@ -53,6 +53,7 @@ test:
   requires:
     - pip
     - pyqt
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/tabulous
